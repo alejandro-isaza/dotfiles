@@ -114,3 +114,26 @@ defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" "@\\U21a9"
 
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
+
+
+###############################################################################
+# Xcode                                                                       #
+###############################################################################
+
+# Tab key always indents
+defaults write com.apple.dt.Xcode DVTTextTabKeyIndentBehavior -string "Always"
+
+# Indent usign spaces
+defaults write com.apple.dt.Xcode DVTTextIndentUsingTabs -boolean false
+
+# Indent width
+defaults write com.apple.dt.Xcode DVTTextIndentWidth -int 4
+
+# Page guide location
+defaults write com.apple.dt.Xcode DVTTextPageGuideLocation -int 120
+
+# Show page guide
+defaults write com.apple.dt.Xcode DVTTextShowPageGuide -boolean true
+
+# Show line numbers
+defaults write com.apple.dt.Xcode DVTTextShowLineNumbers -boolean true
