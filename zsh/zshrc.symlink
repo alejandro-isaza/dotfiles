@@ -17,14 +17,8 @@ alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 #------------------------------
 export EDITOR="vim"
 export PGHOST="localhost"
-export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="$HOME/bin:$PATH"
-
-export NARWHAL_ENGINE=jsc
-export PATH="/usr/local/narwhal/bin:$PATH"
-export CAPP_BUILD="/Users/aisaza/Build"
 
 #------------------------------
 # oh-my-zsh
@@ -39,11 +33,9 @@ plugins=(git osx ruby)
 
 source $ZSH/oh-my-zsh.sh
 
-
 #------------------------------
 # Other
 #------------------------------
 # add some readline keys back
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
-
