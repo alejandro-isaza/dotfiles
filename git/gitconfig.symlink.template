@@ -1,0 +1,30 @@
+[user]
+	name = AUTHORNAME
+	email = AUTHOREMAIL
+
+[alias]
+	br   = branch
+	ci   = commit
+	co   = checkout
+	d    = diff
+	dif  = diff
+	l    = log
+	pul  = pull
+	pur  = pull --rebase
+	purr = pull --rebase
+	s    = status -sb
+	st   = status -sb
+	
+	wipe = reset --hard HEAD
+	ctags = !.git/hooks/ctags
+	rlog = !git --no-pager log --reverse --format=format:%s `git log --grep=build -1 --format=format:%H`..
+
+[color]
+	interactive = auto
+	status = auto
+
+[core]
+	excludesfile = ~/.gitignore
+
+[push]
+	default = simple
