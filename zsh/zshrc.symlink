@@ -21,6 +21,11 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
 #------------------------------
+# rbenv
+#------------------------------
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+#------------------------------
 # oh-my-zsh
 #------------------------------
 ZSH=$HOME/.oh-my-zsh
