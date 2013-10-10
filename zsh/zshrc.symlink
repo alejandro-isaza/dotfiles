@@ -44,3 +44,11 @@ source $ZSH/oh-my-zsh.sh
 # add some readline keys back
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
+
+
+#------------------------------
+# Load local config
+#------------------------------
+if [ -f ~/.zshrc.local ]; then
+	source ~/.zshrc.local
+fi
