@@ -1,4 +1,12 @@
 #------------------------------
+# Functions
+#------------------------------
+# Set MacOS X terminal tab name
+function tabname {
+  printf "\e]1;$1\a"
+}
+
+#------------------------------
 # Aliases
 #------------------------------
 alias rm='rm -i'
