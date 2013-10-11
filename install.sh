@@ -124,8 +124,12 @@ install_dotfiles () {
 }
 
 setup_gitconfig
-setup_osx_defaults
 install_dotfiles
+
+unamestr=`uname`
+if [[ "$unamestr" == "Darwin" ]]; then
+  setup_osx_defaults
+fi
 
 echo ''
 echo '  All installed!'
