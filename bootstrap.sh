@@ -35,7 +35,7 @@ install_oh_my_zsh() {
 install_vundle() {
   echo ''
   echo 'Installing vundle...'
-  if [ -d "~/.vim/bundle/vundle" ]
+  if [ ! -d "~/.vim/bundle/vundle" ]
   then
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     vim +BundleInstall +qall
