@@ -8,7 +8,7 @@ set -e
 install_homebrew() {
   echo ''
   echo 'Installing Homebrew...'
-  ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)" || true
+  ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)" || true
   brew doctor
   brew update
 }
@@ -16,7 +16,7 @@ install_homebrew() {
 install_rbenv() {
   echo ''
   echo 'Installing rbenv...'
-  brew install rbenv
+  brew install rbenv ruby-build
 }
 
 install_ruby() {
