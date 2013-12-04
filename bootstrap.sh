@@ -22,8 +22,8 @@ install_rbenv() {
 install_ruby() {
   echo ''
   echo 'Installing ruby...'
-  rbenv install 2.0.0-p247 || true
-  rbenv global 2.0.0-p247
+  rbenv install 2.0.0-p353 || true
+  rbenv global 2.0.0-p353
 }
 
 install_oh_my_zsh() {
