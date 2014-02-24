@@ -89,5 +89,5 @@ install_oh_my_zsh
 setup_zsh
 
 echo ''
-echo 'All installed!'
+echo 'System ready! Now run install.sh'
 exit 0
