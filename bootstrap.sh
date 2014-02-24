@@ -45,12 +45,6 @@ install_ruby() {
   rbenv global 2.0.0-p353
 }
 
-install_oh_my_zsh() {
-  echo ''
-  echo 'Installing oh my zsh...'
-  curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-}
-
 install_vundle() {
   echo ''
   echo 'Installing vundle...'
@@ -59,6 +53,12 @@ install_vundle() {
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     vim +BundleInstall +qall
   fi
+}
+
+install_oh_my_zsh() {
+  echo ''
+  echo 'Installing oh my zsh...'
+  curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 }
 
 setup_zsh() {
@@ -82,8 +82,8 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 fi
 
 install_ruby
-install_oh_my_zsh
 install_vundle
+install_oh_my_zsh
 setup_zsh
 
 echo ''
