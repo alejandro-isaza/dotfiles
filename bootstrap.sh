@@ -6,7 +6,7 @@
 set -e
 
 check_requirements() {
-  if ! hash ruby 2>/dev/null; then
+  if [ "$(uname)" == "Darwin" ] && ! hash ruby 2>/dev/null; then
     echo 'Please intall ruby'
     exit 1
   fi
