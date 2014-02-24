@@ -25,8 +25,7 @@ alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 #------------------------------
 export EDITOR="vim"
 export PGHOST="localhost"
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.rbenv/bin:$PATH"
 
 #------------------------------
 # rbenv

@@ -5,6 +5,17 @@
 
 set -e
 
+check_requirements() {
+  if ! hash ruby 2>/dev/null; then
+    echo 'Please intall ruby'
+    exit 1
+  fi
+  if ! hash git 2>/dev/null; then
+    echo 'Please intall git'
+    exit 1
+  fi
+}
+
 install_homebrew() {
   echo ''
   echo 'Installing Homebrew...'
@@ -13,10 +24,18 @@ install_homebrew() {
   brew update
 }
 
-install_rbenv() {
+install_rbenv_brew() {
   echo ''
   echo 'Installing rbenv...'
   brew install rbenv ruby-build
+}
+
+install_rbenv_git() {
+  echo ''
+  echo 'Installing rbenv...'
+  git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+  git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+  export PATH=$HOME/.rbenv/bin:$PATH
 }
 
 install_ruby() {
@@ -51,8 +70,17 @@ setup_zsh() {
   fi
 }
 
-install_homebrew
-install_rbenv
+check_requirements
+
+if [ "$(uname)" == "Darwin" ]; then
+  # Mac OS X
+  install_homebrew
+  install_rbenv_brew
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+  # Linux
+  install_rbenv_git
+fi
+
 install_ruby
 install_oh_my_zsh
 install_vundle
