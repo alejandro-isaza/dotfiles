@@ -3,8 +3,6 @@
 # This script sets up a new machine with the basics (Homebrew, rbenv, zsh, etc.)
 #
 
-set -e
-
 check_requirements() {
   if [ "$(uname)" == "Darwin" ] && ! hash ruby 2>/dev/null; then
     echo 'Please intall ruby'
@@ -12,6 +10,10 @@ check_requirements() {
   fi
   if ! hash git 2>/dev/null; then
     echo 'Please intall git'
+    exit 1
+  fi
+  if ! hash zsh 2>/dev/null; then
+    echo 'Please intall zsh'
     exit 1
   fi
 }
