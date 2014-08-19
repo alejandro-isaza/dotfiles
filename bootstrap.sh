@@ -21,9 +21,12 @@ check_requirements() {
 install_homebrew() {
   echo ''
   echo 'Installing Homebrew...'
-  ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)" || true
-  brew doctor
-  brew update
+  if hash brew 2>/dev/null ; then
+    brew update
+  else
+    ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)" || true
+    brew doctor
+  fi
 }
 
 install_rbenv_brew() {
@@ -43,8 +46,11 @@ install_rbenv_git() {
 install_ruby() {
   echo ''
   echo 'Installing ruby...'
-  rbenv install 2.0.0-p353 || true
-  rbenv global 2.0.0-p353
+  rbenv install --list
+  echo 'What version of ruby do you want?'
+  read -e ruby_version
+  rbenv install $ruby_version || true
+  rbenv global $ruby_version
 }
 
 install_vundle() {
