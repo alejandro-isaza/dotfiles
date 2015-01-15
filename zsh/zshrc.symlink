@@ -20,6 +20,8 @@ alias la='ls -AlhG'
 alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pg_stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 
+alias pbsort='pbpaste | sort | pbcopy'
+
 #------------------------------
 # Variables
 #------------------------------
@@ -60,3 +62,4 @@ bindkey "^E" end-of-line
 if [ -f ~/.zshrc.local ]; then
 	source ~/.zshrc.local
 fi
+
