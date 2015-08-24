@@ -3,6 +3,10 @@
 # This script sets up a new machine with the basics (Homebrew, rbenv, zsh, etc.)
 #
 
+user () {
+  printf "\r  [ \033[0;33m?\033[0m ] $1 "
+}
+
 check_requirements() {
   if [ "$(uname)" == "Darwin" ] && ! hash ruby 2>/dev/null; then
     echo 'Please intall ruby'
@@ -80,16 +84,36 @@ setup_zsh() {
 
 check_requirements
 
+# Askk whether to install ruby
+ruby=true
+user "Install rbenv and ruby? [Y/n]?"
+read -n 1 action
+
+case "$action" in
+  n )
+    ruby=false;;
+  N )
+    ruby=false;;
+  * )
+    ;;
+esac
+
 if [ "$(uname)" == "Darwin" ]; then
   # Mac OS X
   install_homebrew
-  install_rbenv_brew
+  if [ "$ruby" == "true" ]; then
+    install_rbenv_brew
+  fi
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   # Linux
-  install_rbenv_git
+  if [ "$ruby" == "true" ]; then
+    install_rbenv_git
+  fi
 fi
 
-install_ruby
+if [ "$ruby" == "true" ]; then
+  install_ruby
+fi
 install_vundle
 install_oh_my_zsh
 setup_zsh
