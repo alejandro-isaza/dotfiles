@@ -9,6 +9,7 @@
 	d    = diff
 	dif  = diff
 	l    = log
+	lg   = log --graph
 	pul  = pull
 	pur  = pull --rebase
 	purr = pull --rebase
@@ -16,8 +17,8 @@
 	st   = status -sb
 
 	wipe = "!git status --untracked-files=no --short; read -p 'Are you sure about this? ' yn; if [[ $yn =~ [Yy] ]]; then git reset --hard HEAD; fi"
-	ctags = !.git/hooks/ctags
 	rlog = !git --no-pager log --reverse --format=format:%s `git log --grep=build -1 --format=format:%H`..
+	rmbr = push --delete
 
 [color]
 	interactive = auto
