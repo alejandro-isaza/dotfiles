@@ -28,7 +28,7 @@ install_homebrew() {
   if hash brew 2>/dev/null ; then
     brew update
   else
-    ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)" || true
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" || true
     brew doctor
   fi
 }
@@ -84,7 +84,7 @@ setup_zsh() {
 
 check_requirements
 
-# Askk whether to install ruby
+# Ask whether to install ruby
 ruby=true
 user "Install rbenv and ruby? [Y/n]?"
 read -n 1 action

@@ -45,7 +45,7 @@ DISABLE_AUTO_TITLE="true"
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git osx ruby brew pod terminalapp)
+plugins=(git osx ruby brew pod terminalapp git-extras github jira wd)
 
 source $ZSH/oh-my-zsh.sh
 

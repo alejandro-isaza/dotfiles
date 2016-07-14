@@ -6,4 +6,6 @@
 *.mode2v3
 *.pbxuser
 *.xccheckout
+*.xctimeline
+*.xcscmblueprint
 xcuserdata/
