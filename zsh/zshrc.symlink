@@ -19,6 +19,7 @@ alias la='ls -AlhG'
 
 alias pbsort='pbpaste | sort | pbcopy'
 alias ox='open *.xcworkspace || open *.xcodeproj'
+alias fl='bundle exec fastlane'
 
 #------------------------------
 # Variables
@@ -41,7 +42,7 @@ DISABLE_AUTO_TITLE="true"
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git osx ruby brew pod terminalapp git-extras github jira wd)
+plugins=(git osx ruby brew pod terminalapp git-extras github jira wd fastlane)
 
 source $ZSH/oh-my-zsh.sh
 

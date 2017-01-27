@@ -1,0 +1,13 @@
+command script import /usr/local/opt/chisel/libexec/fblldb.py
+
+# Objective-C context `po`
+command alias cpo expression -l objc++ -O --
+
+# Objective-C context `p`
+command alias cp expression -l objc++ --
+
+# Swift context `po`
+command alias spo expression -l swift -O --
+
+# Swift context `p`
+command alias sp expression -l swift --
