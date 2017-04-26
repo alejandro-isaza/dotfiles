@@ -38,6 +38,9 @@ endif
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" Integrate fzf
+set rtp+=/usr/local/opt/fzf
+
 " Let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 

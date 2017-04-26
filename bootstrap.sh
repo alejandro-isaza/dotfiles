@@ -104,6 +104,7 @@ if [ "$(uname)" == "Darwin" ]; then
   if [ "$ruby" == "true" ]; then
     install_rbenv_brew
   fi
+  brew install fzf
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   # Linux
   if [ "$ruby" == "true" ]; then
