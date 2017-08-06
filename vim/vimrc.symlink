@@ -1,5 +1,4 @@
-" Leader
-let mapleader = " "
+set nocompatible  " Use Vim settings, rather then Vi settings
 
 set autoindent
 set backspace=indent,eol,start
@@ -13,7 +12,6 @@ set shiftround
 set ttimeout
 set ttimeoutlen=50
 
-set nocompatible  " Use Vim settings, rather then Vi settings
 set nobackup
 set nowritebackup
 set noswapfile
@@ -23,10 +21,16 @@ set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set wildmenu
 
+set relativenumber
+set number
+
 set autoread
 set fileformats+=mac
 
 set history=1000
+
+let mapleader = " "
+let g:airline_powerline_fonts = 1
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -35,31 +39,37 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
 endif
 
 " Declare bundles are handled via Vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " Integrate fzf
 set rtp+=/usr/local/opt/fzf
 
 " Let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 " Define bundles via Github repos
-Bundle 'croaky/vim-colors-github'
-Bundle 'kien/ctrlp.vim'
-Bundle 'Lokaltog/powerline'
-Bundle 'Shougo/neocomplcache.vim'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-sleuth'
-Bundle 'vim-scripts/ctags.vim'
-Bundle 'vim-scripts/greplace.vim'
-Bundle 'vim-scripts/tComment'
-Bundle 'xenoterracide/html.vim'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'croaky/vim-colors-github'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Lokaltog/powerline'
+Plugin 'Shougo/neocomplcache.vim'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-sleuth'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-scripts/ctags.vim'
+Plugin 'vim-scripts/greplace.vim'
+Plugin 'vim-scripts/tComment'
+Plugin 'xenoterracide/html.vim'
 
-filetype plugin indent on
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 augroup vimrcEx
   au!
@@ -117,8 +127,25 @@ map <Leader>ct :!ctags -R .<CR>
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
-" Treat <li> and <p> tags like the block tags they are
-let g:html_indent_tags = 'li\|p'
+
+"
+" Splitting
+"
+
+" Easier navigation between splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Split right an bottom
+set splitbelow
+set splitright
+
+
+"
+" Markdown
+"
 
 " Markdown files end in .md
 au BufRead,BufNewFile *.md set filetype=markdown

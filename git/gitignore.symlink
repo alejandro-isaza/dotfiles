@@ -1,4 +1,5 @@
 .DS_Store
+.vscode
 
 # Xcode per-user config
 *.mode1

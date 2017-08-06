@@ -60,11 +60,20 @@ install_ruby() {
 install_vundle() {
   echo ''
   echo 'Installing vundle...'
-  if [ ! -d "~/.vim/bundle/vundle" ]
+  if [ ! -d "~/.vim/bundle/Vundle.vim" ]
   then
-    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-    vim +BundleInstall +qall
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    vim +PluginInstall +qall
   fi
+}
+
+install_tmux() {
+  echo ''
+  echo 'Installing tmux and TPM'
+  if [ "$(uname)" == "Darwin" ]; then
+    brew install tmux
+  fi
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 
 install_oh_my_zsh() {
@@ -116,6 +125,7 @@ if [ "$ruby" == "true" ]; then
   install_ruby
 fi
 install_vundle
+install_tmux
 install_oh_my_zsh
 setup_zsh
 
