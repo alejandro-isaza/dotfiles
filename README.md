@@ -4,6 +4,7 @@ This is my collection of dot files. Feel free to clone and modify as you please.
 
 * git
 * ruby with rbenv
+  * Use version 2.4.1 of ruby
 * zsh with oh-my-zsh
 * vim with vundle
 * MacOS X defaults
