@@ -76,6 +76,16 @@ install_tmux() {
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 
+install_powerline() {
+  echo ''
+  echo 'Installing Powerline fonts'
+  git clone https://github.com/powerline/fonts.git --depth=1
+  cd fonts
+  ./install.sh
+  cd ..
+  rm -rf fonts
+}
+
 install_oh_my_zsh() {
   echo ''
   echo 'Installing oh my zsh...'
@@ -126,6 +136,7 @@ if [ "$ruby" == "true" ]; then
 fi
 install_vundle
 install_tmux
+install_powerline
 install_oh_my_zsh
 setup_zsh
 
