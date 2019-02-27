@@ -53,11 +53,12 @@ set rtp+=/usr/local/opt/fzf
 Plugin 'VundleVim/Vundle.vim'
 
 " Define bundles via Github repos
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'croaky/vim-colors-github'
-Plugin 'kien/ctrlp.vim'
 Plugin 'Lokaltog/powerline'
 Plugin 'Shougo/neocomplcache.vim'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'croaky/vim-colors-github'
+Plugin 'junegunn/fzf.vim'
+Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
@@ -145,6 +146,10 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
+"
+" Other
+"
+nmap ; :Buffers<CR>
 
 "
 " Markdown

@@ -63,3 +63,5 @@ fi
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+fpath=(~/.zsh $fpath)
+
