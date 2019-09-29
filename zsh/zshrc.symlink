@@ -19,7 +19,7 @@ alias la='ls -AlhG'
 
 alias pbsort='pbpaste | sort | pbcopy'
 alias ox='open *.xcworkspace || open *.xcodeproj'
-alias fl='bundle exec fastlane'
+alias g='git'
 
 #------------------------------
 # Variables
@@ -61,7 +61,5 @@ if [ -f ~/.zshrc.local ]; then
 	source ~/.zshrc.local
 fi
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 fpath=(~/.zsh $fpath)
-

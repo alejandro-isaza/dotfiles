@@ -16,6 +16,12 @@
   s    = status -sb --ignore-submodules=untracked
   st   = status -sb --ignore-submodules=untracked
   pr   = pull-request
+  cane = commit --amend --no-edit
+
+  unstage = reset HEAD --
+  uncommit = reset --soft HEAD^
+  purge = clean -fd
+  pick = cherry-pick
 
   ll = log --graph --decorate --oneline --abbrev-commit
   la = log --graph --decorate --oneline --abbrev-commit --all
@@ -29,7 +35,6 @@
   resume = "!export BRANCH=$(git bn); git co master; git branch -D $BRANCH"
 
   wipe = "!git status --untracked-files=no --short; read -p 'Are you sure about this? ' yn; if [[ $yn =~ [Yy] ]]; then git reset --hard HEAD; fi"
-  rlog = !git --no-pager log --reverse --format=format:%s `git log --grep=build -1 --format=format:%H`..
   v = !git describe --long --tags | cut -f 1 -d "-"
 
 [color]
