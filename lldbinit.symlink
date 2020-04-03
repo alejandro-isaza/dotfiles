@@ -1,5 +1,3 @@
-command script import /usr/local/opt/chisel/libexec/fblldb.py
-
 # Objective-C context `po`
 command alias cpo expression -l objc++ -O --
 
