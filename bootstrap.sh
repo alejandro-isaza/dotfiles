@@ -76,20 +76,18 @@ install_tmux() {
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 
-install_powerline() {
-  echo ''
-  echo 'Installing Powerline fonts'
-  git clone https://github.com/powerline/fonts.git --depth=1
-  cd fonts
-  ./install.sh
-  cd ..
-  rm -rf fonts
-}
-
 install_oh_my_zsh() {
   echo ''
   echo 'Installing oh my zsh...'
   curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+}
+
+install_utilities() {
+  echo ''
+  echo 'Installing delta exa bat...'
+  if [ "$(uname)" == "Darwin" ]; then
+    brew install git-delta exa bat
+  fi
 }
 
 setup_zsh() {
@@ -136,8 +134,8 @@ if [ "$ruby" == "true" ]; then
 fi
 install_vundle
 install_tmux
-install_powerline
 install_oh_my_zsh
+install_utilities
 setup_zsh
 
 echo ''
