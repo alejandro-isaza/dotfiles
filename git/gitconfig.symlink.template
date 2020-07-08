@@ -37,6 +37,10 @@
   wipe = "!git status --untracked-files=no --short; read -p 'Are you sure about this? ' yn; if [[ $yn =~ [Yy] ]]; then git reset --hard HEAD; fi"
   v = !git describe --long --tags | cut -f 1 -d "-"
 
+  cob = "!sh -c \"git checkout -b eng/PR-$1\""
+  do = "!sh -c \"git apply $HOME/dev/patches/$1.patch\""
+  undo = "!sh -c \"git apply --reverse $HOME/dev/patches/$1.patch\""
+
 [color]
   interactive = auto
   status = auto
