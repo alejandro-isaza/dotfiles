@@ -31,8 +31,10 @@
   unp = "!git push --delete origin $(git bn)"
   ppr = "!git pub && git pr"
 
-  # Checks out master and deletes the previous branch
-  resume = "!export BRANCH=$(git bn); git co master; git branch -D $BRANCH"
+  parent = "!git show-branch | grep '*' | grep -v \"$(git rev-parse --abbrev-ref HEAD)\" | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//' #"
+
+  # Checks out parent and deletes the previous branch
+  resume = "!export BRANCH=$(git bn); git co $(git parent); git branch -D $BRANCH"
 
   wipe = "!git status --untracked-files=no --short; read -p 'Are you sure about this? ' yn; if [[ $yn =~ [Yy] ]]; then git reset --hard HEAD; fi"
   v = !git describe --long --tags | cut -f 1 -d "-"
