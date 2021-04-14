@@ -32,7 +32,7 @@ set fileformats+=mac
 
 set history=1000
 
-let mapleader = " "
+let mapleader = ","
 let g:airline_powerline_fonts = 1
 
 " Switch syntax highlighting on, when the terminal has colors
@@ -150,6 +150,10 @@ set splitright
 " Other
 "
 nmap ; :Buffers<CR>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>. @q
+nnoremap <D-m>a @a
+nnoremap <D-m>b @a
 
 "
 " Markdown

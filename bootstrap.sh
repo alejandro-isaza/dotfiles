@@ -28,7 +28,7 @@ install_homebrew() {
   if hash brew 2>/dev/null ; then
     brew update
   else
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" || true
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" || true
     brew doctor
   fi
 }
