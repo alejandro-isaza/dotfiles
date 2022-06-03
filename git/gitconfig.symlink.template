@@ -43,12 +43,33 @@
   do = "!sh -c \"git apply $HOME/dev/patches/$1.patch\""
   undo = "!sh -c \"git apply --reverse $HOME/dev/patches/$1.patch\""
 
+[init]
+	defaultBranch = main
+
+[push]
+  default = simple
+
+[pull]
+	ff = only
+
 [color]
   interactive = auto
   status = auto
 
 [core]
   excludesfile = ~/.gitignore
+  pager = delta
 
-[push]
-  default = simple
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
+  line-numbers = true
+  theme = Monokai Extended
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+  colorMoved = default
