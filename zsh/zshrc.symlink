@@ -61,7 +61,7 @@ DISABLE_AUTO_TITLE="true"
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git osx ruby brew pod git-extras github jira wd zsh-syntax-highlighting zsh-autosuggestions history-substring-search)
+plugins=(git macos ruby brew pod git-extras github jira wd zsh-syntax-highlighting zsh-autosuggestions history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
