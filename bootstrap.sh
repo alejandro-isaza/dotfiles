@@ -90,6 +90,18 @@ install_utilities() {
   fi
 }
 
+install_syntax() {
+  echo ''
+  echo 'Installing zsh-syntax-highlighting'
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+}
+
+install_autosuggestions() {
+  echo ''
+  echo 'Installing zsh-autosuggestions'
+  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions  
+}
+
 setup_zsh() {
   if [ "$SHELL" != "/bin/zsh" ]
   then
@@ -136,6 +148,8 @@ install_vundle
 install_tmux
 install_oh_my_zsh
 install_utilities
+install_autosuggestions
+install_syntax
 setup_zsh
 
 echo ''
